@@ -1,0 +1,149 @@
+/* ============================================================
+   KIROS — Colors & Type Foundations
+   AI Lead Management · dark-first, neon-violet, HUD aesthetic
+   ============================================================ */
+
+/* ----- Fonts (Google Fonts substitutes — see README font note) ----- */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ---------------------------------------------------------
+     COLOR — Backgrounds (violet-tinted near-black scale)
+     Surfaces stack from bg-0 (deepest) up to bg-4 (raised).
+  --------------------------------------------------------- */
+  --bg-0:  #06050A;   /* page void / behind everything       */
+  --bg-1:  #0B0916;   /* base canvas                          */
+  --bg-2:  #121026;   /* card / panel surface                 */
+  --bg-3:  #1A1736;   /* elevated surface, inputs             */
+  --bg-4:  #252149;   /* hover / raised / active row          */
+
+  /* ---------------------------------------------------------
+     COLOR — Brand violet (the glow + the "K" gradient)
+  --------------------------------------------------------- */
+  --violet-300: #DCD3FF;  /* near-white lavender highlight    */
+  --violet-400: #C4B6FD;  /* K-gradient bottom, soft accent   */
+  --violet-500: #9B7CFF;  /* bright violet                    */
+  --violet-600: #7C5CFF;  /* PRIMARY brand violet             */
+  --violet-700: #5B3EE0;  /* pressed / deep                   */
+  --violet-800: #3D2899;  /* deepest usable                   */
+
+  /* K gradient (use for the mark + hero accents) */
+  --grad-k:     linear-gradient(180deg, #FFFFFF 0%, #DCD3FF 45%, #C4B6FD 100%);
+  --grad-violet:linear-gradient(135deg, #9B7CFF 0%, #7C5CFF 50%, #5B3EE0 100%);
+  --grad-halo:  radial-gradient(60% 60% at 50% 42%, rgba(124,92,255,0.35) 0%, rgba(124,92,255,0.08) 45%, transparent 72%);
+
+  /* ---------------------------------------------------------
+     COLOR — Foreground / text (violet-leaning neutrals)
+  --------------------------------------------------------- */
+  --fg-1: #F4F2FF;   /* primary text / headings               */
+  --fg-2: #B6B0D8;   /* secondary text, labels                */
+  --fg-3: #7C769C;   /* muted, captions, placeholder          */
+  --fg-4: #4A4566;   /* faint, disabled, dividers-as-text     */
+
+  /* ---------------------------------------------------------
+     COLOR — Lines & borders
+  --------------------------------------------------------- */
+  --line-1: rgba(255,255,255,0.07);   /* hairline divider     */
+  --line-2: rgba(255,255,255,0.12);   /* card border          */
+  --line-violet: rgba(124,92,255,0.28); /* HUD / focus edge   */
+
+  /* ---------------------------------------------------------
+     COLOR — Semantic + lead-temperature (signature to KIROS)
+     KIROS scores leads hot / warm / cold.
+  --------------------------------------------------------- */
+  --hot:   #FF4D8D;   /* hot lead — high intent               */
+  --warm:  #FFB23E;   /* warm lead — needs nurture            */
+  --cold:  #4AA8FF;   /* cold lead — low intent               */
+  --success: #3FD68C; /* qualified / positive                 */
+  --danger:  #FF5C5C; /* error / disqualified                 */
+
+  --hot-soft:  rgba(255,77,141,0.14);
+  --warm-soft: rgba(255,178,62,0.14);
+  --cold-soft: rgba(74,168,255,0.14);
+  --success-soft: rgba(63,214,140,0.14);
+  --violet-soft:  rgba(124,92,255,0.14);
+
+  /* ---------------------------------------------------------
+     COLOR — Channels (where leads come from)
+  --------------------------------------------------------- */
+  --whatsapp: #25D366;
+  --instagram: #E1306C;
+  --ig-grad: linear-gradient(135deg, #F58529 0%, #DD2A7B 50%, #8134AF 100%);
+
+  /* ---------------------------------------------------------
+     SHADOWS & GLOWS — neon glow is the brand's elevation cue
+  --------------------------------------------------------- */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.45);
+  --shadow-lg: 0 24px 60px rgba(0,0,0,0.55);
+  --glow-violet: 0 0 0 1px rgba(124,92,255,0.35), 0 8px 32px rgba(124,92,255,0.35);
+  --glow-violet-soft: 0 0 28px rgba(124,92,255,0.28);
+  --glow-hot: 0 0 24px rgba(255,77,141,0.30);
+
+  /* ---------------------------------------------------------
+     RADII
+  --------------------------------------------------------- */
+  --r-xs: 6px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+
+  /* ---------------------------------------------------------
+     SPACING — 4px base scale
+  --------------------------------------------------------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+
+  /* ---------------------------------------------------------
+     TYPE — families
+  --------------------------------------------------------- */
+  --font-display: 'Space Grotesk', system-ui, sans-serif; /* headings, wordmark feel */
+  --font-body:    'Manrope', system-ui, sans-serif;       /* body, UI                */
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace; /* data, HUD labels, code */
+
+  /* ---------------------------------------------------------
+     TYPE — semantic roles (font / size / line / weight / spacing)
+  --------------------------------------------------------- */
+  --display-font: var(--font-display);
+  --display-size: 64px;  --display-line: 1.02; --display-weight: 700; --display-spacing: -0.02em;
+
+  --h1-font: var(--font-display); --h1-size: 44px; --h1-line: 1.08; --h1-weight: 700; --h1-spacing: -0.015em;
+  --h2-font: var(--font-display); --h2-size: 32px; --h2-line: 1.15; --h2-weight: 600; --h2-spacing: -0.01em;
+  --h3-font: var(--font-display); --h3-size: 22px; --h3-line: 1.25; --h3-weight: 600; --h3-spacing: -0.005em;
+
+  --body-lg-font: var(--font-body); --body-lg-size: 18px; --body-lg-line: 1.6; --body-lg-weight: 400;
+  --body-font:    var(--font-body); --body-size: 16px;    --body-line: 1.6;    --body-weight: 400;
+  --body-sm-font: var(--font-body); --body-sm-size: 14px; --body-sm-line: 1.55; --body-sm-weight: 400;
+
+  --label-font: var(--font-body); --label-size: 13px; --label-weight: 600; --label-spacing: 0.01em;
+  --caption-font: var(--font-body); --caption-size: 12px; --caption-weight: 500;
+
+  /* Eyebrow / HUD label — uppercase, tracked, mono. Brand signature. */
+  --eyebrow-font: var(--font-mono); --eyebrow-size: 12px; --eyebrow-weight: 500; --eyebrow-spacing: 0.22em;
+
+  --mono-font: var(--font-mono); --mono-size: 13px; --mono-line: 1.5; --mono-weight: 500;
+}
+
+/* ============================================================
+   Semantic type helpers — apply these classes directly
+   ============================================================ */
+.kiros-display { font-family: var(--display-font); font-size: var(--display-size); line-height: var(--display-line); font-weight: var(--display-weight); letter-spacing: var(--display-spacing); color: var(--fg-1); }
+h1, .kiros-h1 { font-family: var(--h1-font); font-size: var(--h1-size); line-height: var(--h1-line); font-weight: var(--h1-weight); letter-spacing: var(--h1-spacing); color: var(--fg-1); }
+h2, .kiros-h2 { font-family: var(--h2-font); font-size: var(--h2-size); line-height: var(--h2-line); font-weight: var(--h2-weight); letter-spacing: var(--h2-spacing); color: var(--fg-1); }
+h3, .kiros-h3 { font-family: var(--h3-font); font-size: var(--h3-size); line-height: var(--h3-line); font-weight: var(--h3-weight); letter-spacing: var(--h3-spacing); color: var(--fg-1); }
+.kiros-body-lg { font-family: var(--body-lg-font); font-size: var(--body-lg-size); line-height: var(--body-lg-line); font-weight: var(--body-lg-weight); color: var(--fg-2); }
+.kiros-body, p { font-family: var(--body-font); font-size: var(--body-size); line-height: var(--body-line); font-weight: var(--body-weight); color: var(--fg-2); }
+.kiros-body-sm { font-family: var(--body-sm-font); font-size: var(--body-sm-size); line-height: var(--body-sm-line); font-weight: var(--body-sm-weight); color: var(--fg-2); }
+.kiros-label { font-family: var(--label-font); font-size: var(--label-size); font-weight: var(--label-weight); letter-spacing: var(--label-spacing); color: var(--fg-2); }
+.kiros-eyebrow { font-family: var(--eyebrow-font); font-size: var(--eyebrow-size); font-weight: var(--eyebrow-weight); letter-spacing: var(--eyebrow-spacing); text-transform: uppercase; color: var(--violet-500); }
+.kiros-mono { font-family: var(--mono-font); font-size: var(--mono-size); line-height: var(--mono-line); font-weight: var(--mono-weight); color: var(--fg-2); }
+.kiros-gradient-text { background: var(--grad-k); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
